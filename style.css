@@ -4,6 +4,15 @@
   padding: 0;
 }
 
+body {
+    text-align: center;
+}
+
+#restart-button {
+    margin: 10px;
+    padding: 10px;
+}
+
 #canvas-container {
   background-color: #9f9f9f;
   margin: 10px auto;
