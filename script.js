@@ -8,3 +8,11 @@ for (let i = 1; i <= TOTAL_CELLS; i++) {
     cell.classList.add('cell')
     canvas.appendChild(cell)
 }
+
+const cells = document.querySelectorAll('.cell')
+
+cells.forEach((cell) => {
+    cell.addEventListener('mouseover', (event) => {
+        cell.classList.add('drawn')
+    })
+})
