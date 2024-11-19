@@ -1,17 +1,21 @@
 const canvas = document.querySelector("#canvas");
 const restartButton = document.querySelector("#restart-button");
 
-let canvasDimensions = 25;
+let canvasDimensions = 50;
 let cellColor = '#282828'
+
+function getCellDimensions() {
+  return (500 / canvasDimensions) + "px"
+}
 
 function createCanvas() {
   restartCanvas();
-  canvas.style.width = canvasDimensions * 10 + "px";
-  canvas.style.height = canvasDimensions * 10 + "px";
   const totalCells = canvasDimensions ** 2;
   for (let i = 1; i <= totalCells; i++) {
     const cell = document.createElement("div");
     cell.classList.add("cell");
+    cell.style.width = getCellDimensions()
+    cell.style.height = getCellDimensions()
     canvas.appendChild(cell);
   }
   makeDrawable();
@@ -32,11 +36,11 @@ function makeDrawable() {
 
 function createNewCanvas() {
   canvasDimensions = prompt(
-    "What size do you want the new canvas to be?\nInsert a value between 10 and 100",
-    25
+    "What size do you want the new canvas to be?\nInsert a value between 2 and 100",
+    50
   );
-  if (canvasDimensions > 100 || canvasDimensions < 25) {
-    alert("I said between 25 and 100!");
+  if (canvasDimensions > 100 || canvasDimensions < 2) {
+    alert("I said between 2 and 100!");
     createNewCanvas();
   }
   createCanvas();

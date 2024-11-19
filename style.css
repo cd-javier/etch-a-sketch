@@ -13,6 +13,8 @@ body {
 }
 
 #canvas {
+  height: 500px;
+  width: 500px;
   background-color: #B5B5BF;
 
   display: flex;
@@ -21,11 +23,6 @@ body {
   border-radius: 5px;
 
   cursor: pointer;
-}
-
-.cell {
-  height: 10px;
-  width: 10px;
 }
 
 #canvas-container {
@@ -40,17 +37,17 @@ body {
     display:flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
+    padding: 24px 0;
 }
 
 #restart-button {
     font-family: "Comic Sans MS", "Comic Sans", cursive;
-    padding: 10px;
+    padding: 12px;
     border: 2px solid #b6a831;
     border-radius: 4px;
     background-color: #EEDE4D;
     color: #60591b;
-    box-shadow: 2px 2px 5px #00000050;
+    box-shadow: 0px 4px 5px #00000050;
     cursor: pointer;
 }
 
@@ -59,5 +56,5 @@ body {
     width: 10%;
     padding-top: 10%;
     border-radius: 50%;
-    box-shadow: 2px 2px 5px #00000050;
+    box-shadow: 0px 4px 5px #00000050;
 }
