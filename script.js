@@ -1,18 +1,24 @@
-const canvas = document.querySelector('#canvas-container')
+const canvas = document.querySelector("#canvas-container");
 
-const CANVAS_DIMENSIONS = 16;
-const TOTAL_CELLS = CANVAS_DIMENSIONS ** 2;
+let canvasDimensions = 50;
+let totalCells = canvasDimensions ** 2;
 
-for (let i = 1; i <= TOTAL_CELLS; i++) {
-    const cell = document.createElement('div');
-    cell.classList.add('cell')
-    canvas.appendChild(cell)
+function createCanvas() {
+  canvas.style.width = canvasDimensions * 10 + "px";
+  canvas.style.height = canvasDimensions * 10 + "px";
+  for (let i = 1; i <= totalCells; i++) {
+    const cell = document.createElement("div");
+    cell.classList.add("cell");
+    canvas.appendChild(cell);
+  }
 }
 
-const cells = document.querySelectorAll('.cell')
+document.addEventListener("load", createCanvas());
+
+const cells = document.querySelectorAll(".cell");
 
 cells.forEach((cell) => {
-    cell.addEventListener('mouseover', (event) => {
-        cell.classList.add('drawn')
-    })
-})
+  cell.addEventListener("mouseenter", (event) => {
+    cell.classList.add("drawn");
+  });
+});
