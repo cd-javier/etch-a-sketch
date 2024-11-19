@@ -35,7 +35,7 @@ body {
     flex-direction: column;
     padding: 30px 30px 0 30px;
     border-radius: 20px;
-    box-shadow: inset 0 0 10px #cab2b2;
+    box-shadow: 0px 8px 8px #acacb1, inset 0 0 10px #cab2b2;
 }
 
 #wheel-container {
