@@ -1,4 +1,4 @@
-const canvas = document.querySelector("#canvas-container");
+const canvas = document.querySelector("#canvas");
 const restartButton = document.querySelector("#restart-button");
 
 let canvasDimensions = 25;
@@ -34,8 +34,8 @@ function createNewCanvas() {
     "What size do you want the new canvas to be?\nInsert a value between 10 and 100",
     25
   );
-  if (canvasDimensions > 100 || canvasDimensions < 10) {
-    alert("I said between 10 and 100!");
+  if (canvasDimensions > 100 || canvasDimensions < 25) {
+    alert("I said between 25 and 100!");
     createNewCanvas();
   }
   createCanvas();
