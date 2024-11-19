@@ -28,10 +28,6 @@ body {
   width: 10px;
 }
 
-.drawn {
-  background-color: #282828;
-}
-
 #canvas-container {
     background-color: #A80100;
     display: inline-flex;

@@ -2,6 +2,7 @@ const canvas = document.querySelector("#canvas");
 const restartButton = document.querySelector("#restart-button");
 
 let canvasDimensions = 25;
+let cellColor = '#282828'
 
 function createCanvas() {
   restartCanvas();
@@ -24,7 +25,7 @@ function makeDrawable() {
   const cells = document.querySelectorAll(".cell");
   cells.forEach((cell) => {
     cell.addEventListener("mouseenter", (event) => {
-      cell.classList.add("drawn");
+      cell.style.backgroundColor = cellColor;
     });
   });
 }
