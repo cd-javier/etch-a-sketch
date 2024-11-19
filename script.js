@@ -1,17 +1,22 @@
 const canvas = document.querySelector("#canvas-container");
 
-let canvasDimensions = 50;
-let totalCells = canvasDimensions ** 2;
+let canvasDimensions = 16;
 
 function createCanvas() {
+  restartCanvas();
   canvas.style.width = canvasDimensions * 10 + "px";
   canvas.style.height = canvasDimensions * 10 + "px";
+  const totalCells = canvasDimensions ** 2;
   for (let i = 1; i <= totalCells; i++) {
     const cell = document.createElement("div");
     cell.classList.add("cell");
     canvas.appendChild(cell);
   }
 }
+
+function restartCanvas() {
+    canvas.textContent = "";
+  }
 
 document.addEventListener("load", createCanvas());
 
