@@ -6,7 +6,7 @@ const rainbowButton = document.querySelector("#rainbow-button");
 
 let canvasDimensions = 50;
 let cellColor = "#282828";
-let currentMode = "rainbow";
+let currentMode = "classic";
 
 function getCellDimensions() {
   return 500 / canvasDimensions + "px";
