@@ -45,7 +45,7 @@ body {
     padding: 24px 0;
 }
 
-#restart-button {
+button {
     font-family: "Comic Sans MS", "Comic Sans", cursive;
     padding: 12px;
     border: 2px solid #b6a831;

@@ -1,11 +1,29 @@
 const canvas = document.querySelector("#canvas");
 const restartButton = document.querySelector("#restart-button");
+const classicButton = document.querySelector("#classic-button");
+const shadeButton = document.querySelector("#shade-button");
+const rainbowButton = document.querySelector("#rainbow-button");
 
 let canvasDimensions = 50;
-let cellColor = '#282828'
+let cellColor = "#282828";
+let currentMode = "rainbow";
 
 function getCellDimensions() {
-  return (500 / canvasDimensions) + "px"
+  return 500 / canvasDimensions + "px";
+}
+
+function getRandomColor() {
+  const rainbow = [
+    "E6271F",
+    "EB7532",
+    "F7D137",
+    "A3E048",
+    "49DA9A",
+    "35BCE6",
+    "4355DB",
+    "D23BE7",
+  ];
+  return "#" + rainbow[Math.floor(Math.random() * rainbow.length)];
 }
 
 function createCanvas() {
@@ -14,8 +32,10 @@ function createCanvas() {
   for (let i = 1; i <= totalCells; i++) {
     const cell = document.createElement("div");
     cell.classList.add("cell");
-    cell.style.width = getCellDimensions()
-    cell.style.height = getCellDimensions()
+    cell.style.width = getCellDimensions();
+    cell.style.height = getCellDimensions();
+    cell.style.opacity = 0;
+    cell.style.backgroundColor = cellColor;
     canvas.appendChild(cell);
   }
   makeDrawable();
@@ -29,7 +49,15 @@ function makeDrawable() {
   const cells = document.querySelectorAll(".cell");
   cells.forEach((cell) => {
     cell.addEventListener("mouseenter", (event) => {
-      cell.style.backgroundColor = cellColor;
+      if (currentMode === "classic") {
+        cell.style.backgroundColor = cellColor;
+        cell.style.opacity = 1;
+      } else if (currentMode === "shade") {
+        cell.style.opacity = (cell.style.opacity * 10 + 2) / 10;
+      } else if (currentMode === "rainbow") {
+        cell.style.backgroundColor = getRandomColor();
+        cell.style.opacity = 1;
+      }
     });
   });
 }
@@ -49,3 +77,12 @@ function createNewCanvas() {
 document.addEventListener("load", createCanvas());
 
 restartButton.addEventListener("click", createNewCanvas);
+classicButton.addEventListener("click", () => {
+  currentMode = "classic";
+});
+shadeButton.addEventListener("click", () => {
+  currentMode = "shade";
+});
+rainbowButton.addEventListener("click", () => {
+  currentMode = "rainbow";
+});
